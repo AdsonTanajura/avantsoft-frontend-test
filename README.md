@@ -1,46 +1,106 @@
-# Getting Started with Create React App
+# Avantsoft Test — Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicação **React + TypeScript** para consumir a API NestJS do processo seletivo **Avantsoft**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✅ Funcionalidades
 
-### `npm start`
+- **Formulário de criação de produto**  
+  Campos: `name`, `price` e `sku`.
+- **Lista de produtos**  
+  Vem do endpoint real `GET /products` — já ordenado por `name`.
+- **Exclusão de produto**  
+  Botão `Delete` remove o produto via `DELETE /products/:id`.
+- Cada item mostra a **primeira letra do alfabeto ausente** (`missingLetter`).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🚀 Como rodar local
 
-### `npm test`
+```bash
+# Instalar dependências
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Rodar em modo dev
+npm run dev
+```
 
-### `npm run build`
+A aplicação abre em [http://localhost:3000](http://localhost:3000)  
+⚠️ A API precisa estar rodando em [http://localhost:3001](http://localhost:3001)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📌 Endpoints consumidos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Método | URL             | Descrição               |
+| ------ | --------------- | ----------------------- |
+| POST   | `/products`     | Cria produto            |
+| GET    | `/products`     | Lista produtos (ordenados) |
+| DELETE | `/products/:id` | Remove produto          |
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🗂️ Estrutura de pastas
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+src/
+ ├── api.ts          # Configuração Axios (baseURL)
+ ├── App.tsx         # Estrutura principal + rotas
+ ├── components/
+ │   ├── ProductForm/
+ │   │   ├── index.tsx
+ │   │   ├── index.css
+ │   │   └── interface.ts
+ │   ├── ProductList/
+ │   │   ├── index.tsx
+ │   │   └── index.css
+ ├── routers/
+ │   └── index.tsx   # Configuração de rotas (se usado)
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## ⚙️ Tecnologias
 
-## Learn More
+- React
+- TypeScript
+- Axios
+- ESLint & Prettier
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📎 Backend
+
+Este frontend consome a API do repositório 👉 **Avantsoft Test — Backend**
+
+---
+
+## ✅ Passo a passo para rodar tudo
+
+### 1️⃣ Clone e rode o backend
+
+```bash
+git clone https://github.com/AdsonTanajura/avantsoft-test.git
+cd avantsoft-test
+npm install
+npm run start:dev
+```
+
+### 2️⃣ Clone e rode o frontend
+
+```bash
+git clone https://github.com/AdsonTanajura/avantsoft-frontend-test.git
+cd avantsoft-frontend-test
+npm install
+npm run dev
+```
+
+### 3️⃣ Acesse
+
+Abra [http://localhost:3000](http://localhost:3000) ➜ Crie, liste e remova produtos!
+
+---
+
+**Desenvolvido por Adson Tanajura**  
+🚀 Processo seletivo Avantsoft — 2025
