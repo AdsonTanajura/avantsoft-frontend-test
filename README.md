@@ -72,7 +72,7 @@ src/
 
 ## 📎 Backend
 
-Este frontend consome a API do repositório 👉 **Avantsoft Test — Backend**
+Este frontend consome a API do repositório 👉 **[Avantsoft Test — Backend](https://github.com/AdsonTanajura/avantsoft-test)**
 
 ---
 
